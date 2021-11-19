@@ -24,9 +24,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@domain.com
-author: GitHub User
+title: ben blog
+email: bengunson@gmail.com
+author: Bennett Gunson
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -47,8 +47,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "http://bengunson.me" # the base hostname & protocol for your site, e.g. http://example.com
 favicon: "" # the favicon for your site
 
 # Yat date format
@@ -206,3 +206,5 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
+
+remote_theme: "jeffreytse/jekyll-theme-yat"
