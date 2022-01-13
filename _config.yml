@@ -46,7 +46,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   A collection of posts about software, hardware, the outdoors and whatever else I feel like posting.
 
 baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://bgunson.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://bengunson.me" # the base hostname & protocol for your site, e.g. http://example.com
 favicon: "" # the favicon for your site
 
 # Yat date format
@@ -151,12 +151,13 @@ translate_langs:
 #   - tags.html
 #   - about.md
 
+
 # Page default value
 defaults:
   home:
     heading: "Nothing to see here"
     subheading: "Move along"
-    # banner: "Your image url"
+    banner: "assets/images/banners/home.jpeg"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
