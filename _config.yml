@@ -40,7 +40,7 @@ author: Bennett Gunson
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
+copyright: "Unpublished Work (cleft) {currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   A collection of posts about software, hardware, the outdoors and whatever else I feel like posting.
@@ -154,7 +154,7 @@ translate_langs:
 # Page default value
 defaults:
   home:
-    heading: "Nothing to see"
+    heading: "Nothing to see here"
     subheading: "Move along"
     # banner: "Your image url"
 
@@ -204,5 +204,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
+  - jekyll-gist
 
 remote_theme: "jeffreytse/jekyll-theme-yat"
