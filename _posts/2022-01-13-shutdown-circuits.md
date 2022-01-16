@@ -2,7 +2,7 @@
 layout: post
 title: Raspberry Pi Graceful Shutdown Circuits
 subtitle: A look into graceful shutdown circuits for automotive purposes
-tags: [OnBoardPi]
+tags: [OnBoardPi, Raspberry Pi]
 categories: [Software, Hardware]
 ---
 
@@ -33,7 +33,7 @@ I simulated the circuit with some wires and sure enough it worked so I ordered s
 
 ## Wiring Diagram
 ![]({{site.baseurl}}/assets/images/onboardpi/shutdown-circuit-diagram.png)
-*Here is an low-fidelity wiring diagram, I am not an electrical engineer but you will hopefully get the point.* 
+*Here is a low-fidelity wiring diagram, I am not an electrical engineer but you will hopefully get the point. Made with [Circuit Diagram][6]* 
 
 ### Circuit Description
 As said above we are relying on the ACC circuit to energize the relay. So, 
@@ -83,3 +83,4 @@ an extremely cost effective and functional solution to avoiding corruption.
 [3]: https://github.com/opencardev/crankshaft/wiki/Boot,-reboot-and-shutdown-the-Pi-with-ignition-key
 [4]: https://www.amazon.ca/gp/product/B07C9CKX1B/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
 [5]: https://github.com/scruss/shutdown_button
+[6]: https://www.circuit-diagram.org/
