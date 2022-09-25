@@ -10,8 +10,3 @@ my posts here can show the type of person I am day to day, or provide informativ
 my old self and use it to gauge the progress I make personally and professionally. Thanks for coming by and check out some of my projects or keep reading about me below. 
 
 Ben
-### Software
-
-#### Education
-
-### Adventures
