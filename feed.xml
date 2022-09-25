@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://bengunson.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://bengunson.me/blog/" rel="alternate" type="text/html" /><updated>2022-09-25T17:32:27+00:00</updated><id>https://bengunson.me/blog/feed.xml</id><title type="html">ben blog</title><subtitle>A collection of posts about software, hardware, the outdoors and whatever else I feel like posting.</subtitle><author><name>Bennett Gunson</name></author><entry><title type="html">An Adventure on Film</title><link href="https://bengunson.me/blog/adventures/2022/09/25/an-adventure-on-film.html" rel="alternate" type="text/html" title="An Adventure on Film" /><published>2022-09-25T00:00:00+00:00</published><updated>2022-09-25T00:00:00+00:00</updated><id>https://bengunson.me/blog/adventures/2022/09/25/an-adventure-on-film</id><content type="html" xml:base="https://bengunson.me/blog/adventures/2022/09/25/an-adventure-on-film.html">&lt;p&gt;From July 2022. Shot on a Pentax Espio 738.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (15).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (16).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (17).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (18).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (19).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (20).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (21).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (22).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (23).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (24).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (25).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (26).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (27).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/adventures/3000km/photo (28).jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Bennett Gunson</name></author><category term="Adventures" /><category term="35mm" /><category term="Photography" /><summary type="html">From July 2022. Shot on a Pentax Espio 738.</summary></entry><entry><title type="html">Raspberry Pi Graceful Shutdown Circuits</title><link href="https://bengunson.me/blog/software/hardware/2022/01/13/shutdown-circuits.html" rel="alternate" type="text/html" title="Raspberry Pi Graceful Shutdown Circuits" /><published>2022-01-13T00:00:00+00:00</published><updated>2022-01-13T00:00:00+00:00</updated><id>https://bengunson.me/blog/software/hardware/2022/01/13/shutdown-circuits</id><content type="html" xml:base="https://bengunson.me/blog/software/hardware/2022/01/13/shutdown-circuits.html">&lt;p&gt;In the times before covid I was taking a class in Computing Machinery where we were given a Raspberry Pi 4 with the intention of bare-metal programming in a lab settings. Unluckily, that semester covid came to town and all in-person teaching was suspended. 
+The Pi since sat in my drawer with not much use other than collecting dust. Most recently I have been involved in developing web applications for data acquisition and visualization at an internship with &lt;a href=&quot;https://svscontrols.com/&quot;&gt;SVSControls&lt;/a&gt;, a small industrial automation 
+company specializing in PLC programming and industrial computer networks. Toward the end of my placement I thought I should use my Raspberry Pi for a small-scale data server for my vehicle. My passion and interest in web-based systems drove me 
+to start &lt;a href=&quot;https://github.com/bgunson/onboardpi&quot;&gt;OnBoardPi&lt;/a&gt;, a Raspberry Pi based OBD (On-Board Diagnostics) web server. This project began with testing many OBD libraries and tackling the challenge of actually installing the Pi in a vehicle.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem-with-automotive-power&quot;&gt;The Problem with Automotive Power&lt;/h2&gt;
+
+&lt;p&gt;Most modern cars (if not a diesel or an older 6V system) have a typical 12V system running all the electronics in the vehicle. Many of the electronic parts are ready made to run on 12 volts since their application does not stray much from the automotive world. 
+Further, the actual day-to-day usage of a car is intermittent and unpredictable. Sure you could install a Raspberry Pi on directly to the battery (voltage regulated to 5V of course but this is another topic of discussion) and have it running all the time. 
+Car batteries do not last forever and although the current draw of a Pi is relatively low, if you are not driving consistently and recharging your battery via the alternator, you will eventually be left stranded with a dead battery. Thus is the need for a way to 
+indicate to the Pi it is time to shutdown when you the driver shuts the car off.&lt;/p&gt;
+
+&lt;p&gt;Automotive circuitry provides us with a existing switched power source called ACC (accessory) or ignition power. This is the circuit you will see in action when you put you turn your key without actually starting the car. Most of the internal devices will illuminate such as your dash cluster,
+radio and more. This is the perfect circuit to piggy back off of to tell the Pi to turn off.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-solution-relays&quot;&gt;The solution: Relays&lt;/h2&gt;
+
+&lt;p&gt;As I began testing the software I needed to think about a graceful shutdown for my OnBoardPi. Yes, you may be able to pull the plug on your Pi and not risk any corruption but its better to be safe than sorry. The ultimate solution is to utilize the Pi’s GPIO and the ACC power source to 
+implement the shutdown circuit. I began researching for a solution and stumbled across this &lt;a href=&quot;https://github.com/opencardev/crankshaft/wiki/Boot,-reboot-and-shutdown-the-Pi-with-ignition-key&quot;&gt;page&lt;/a&gt; on a way to implement a graceful shutdown. The solution was right in front of me the whole time: a relay. The only other times I had used a relay was to wire up external lights 
+on my car that require a relay and rocker switch wiring harness to power the lights directly off of the battery. My circuitry and automotive electrical knowledge is limited, but a relay contains a coil which when energized operates a switch.&lt;/p&gt;
+
+&lt;p&gt;I simulated the circuit with some wires and sure enough it worked so I ordered some &lt;a href=&quot;https://www.amazon.ca/gp/product/B07C9CKX1B/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;amp;psc=1&quot;&gt;5 pin automotive relays&lt;/a&gt;, modified the &lt;a href=&quot;https://github.com/scruss/shutdown_button&quot;&gt;referred shutdown script&lt;/a&gt; and this is what I came up with:&lt;/p&gt;
+
+&lt;h2 id=&quot;wiring-diagram&quot;&gt;Wiring Diagram&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/onboardpi/shutdown-circuit-diagram.png&quot; alt=&quot;&quot; /&gt;
+&lt;em&gt;Here is a low-fidelity wiring diagram, I am not an electrical engineer but you will hopefully get the point. Made with &lt;a href=&quot;https://www.circuit-diagram.org/&quot;&gt;Circuit Diagram&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;circuit-description&quot;&gt;Circuit Description&lt;/h3&gt;
+&lt;p&gt;As said above we are relying on the ACC circuit to energize the relay. So,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Connect 12V+ (ACC) to pin 86 and ground it to the chassis through pin 85.&lt;/li&gt;
+  &lt;li&gt;Connect COM (relay pin 30) to ground, or to a GPIO ground pin.&lt;/li&gt;
+  &lt;li&gt;Connect NC (relay pin 87a) to GPIO27&lt;/li&gt;
+  &lt;li&gt;Connect NO (relay pin 87) to GPIO3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For this circuit to work, the Pi must be connected to a 5V power source such as a cigarette lighter to USB plug, like the one you charge your phone on. When you get into your car and turn your key, ACC will energize the relay. 
+The switch will flip from NC to NO. Grounding GPIO3 wakes a Pi (already given 5V) from a halted state to boot. When you shut the vehicle off, ACC power is terminated and the relay goes back to its resting state i.e COM and NC closed. 
+This simulates the pressing of a button or switch; by grounding GPIO27, the script will call your favourite Linux shutdown command and the Pi will gracefully turn off.&lt;/p&gt;
+
+&lt;p&gt;If you desire to install a cooling fan, you can connect its negative lead to the connection from relay pin 87 and GPIO3. This ensures the fan is only powered with ignition. If you do not want the fan to shutoff for some reason, you can connect it to any empty GPIO ground pin.&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;This circuit can easily be implemented with a 4 pin automotive relay, you will need to flip some logic in how the Pi interprets the “Button” press.&lt;/li&gt;
+  &lt;li&gt;This circuit requires the Pi be provided constant 5V power for the wake feature to work.
+    &lt;ul&gt;
+      &lt;li&gt;A halted Pi will use less power than a running one so the shutdown effort is not obsolete. The red power indicator LED will remain on but the Pi is indeed off.&lt;/li&gt;
+      &lt;li&gt;If you are worried about halted power consumption, wire a switch into the power supply circuit that you can manually turn off when you are not driving for an extended period of time. 
+  Or, locate a delayed circuit (like auto-off headlights), or install a timer-relay to cut power to the Pi.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;shutdown-script&quot;&gt;Shutdown Script&lt;/h2&gt;
+&lt;p&gt;I made some modifications to the existing &lt;a href=&quot;https://github.com/scruss/shutdown_button&quot;&gt;script&lt;/a&gt; to both simplify and better suit my use-case. Here:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The Pi will shutdown after 10 seconds of no ACC power, I have since reduced my own version to something like 3-5 seconds.&lt;/li&gt;
+  &lt;li&gt;If the key is returned to ACC after at least 5 seconds but noe more than 10, the Pi will reboot.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&quot;https://gist.github.com/bgunson/7646d2030991d40f6debd2de3dc783b8.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;In your own version you can substitute GPIO27 for any other pin if it makes more sense, just change it in the script.&lt;/p&gt;
+
+&lt;p&gt;From here you should have this script run as a service, so use systemd or similar to run this script at boot.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Using relays to automate a graceful shutdown can be extended to not only Raspberry Pi’s but other single board computers running an OS that require a diligent shutdown procedure in intermittent settings.
+This application has its use beyond cars as well, many industrial scenarios like mobile hydro-vac excavation, oil and gas drilling and fracturing and more may require on board data acquisition using devices like Raspberry Pi’s and I believe this to be
+an extremely cost effective and functional solution to avoiding corruption.&lt;/p&gt;</content><author><name>Bennett Gunson</name></author><category term="Software" /><category term="Hardware" /><category term="OnBoardPi" /><category term="Raspberry Pi" /><summary type="html">In the times before covid I was taking a class in Computing Machinery where we were given a Raspberry Pi 4 with the intention of bare-metal programming in a lab settings. Unluckily, that semester covid came to town and all in-person teaching was suspended. The Pi since sat in my drawer with not much use other than collecting dust. Most recently I have been involved in developing web applications for data acquisition and visualization at an internship with SVSControls, a small industrial automation company specializing in PLC programming and industrial computer networks. Toward the end of my placement I thought I should use my Raspberry Pi for a small-scale data server for my vehicle. My passion and interest in web-based systems drove me to start OnBoardPi, a Raspberry Pi based OBD (On-Board Diagnostics) web server. This project began with testing many OBD libraries and tackling the challenge of actually installing the Pi in a vehicle.</summary></entry></feed>
